@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PeakInsight</title>
+    <link>https://peakinsight.netlify.app</link>
+    <description>Smart insights on Tech, Finance, Health and Lifestyle to help you live and earn better.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Mar 2026 08:00:00 +0000</lastBuildDate>
+    <atom:link href="https://peakinsight.netlify.app/rss.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://peakinsight.netlify.app/favicon.ico</url>
+      <title>PeakInsight</title>
+      <link>https://peakinsight.netlify.app</link>
+    </image>
+
+    <item>
+      <title>12 Best Free AI Tools in 2026 - Tested and Ranked</title>
+      <link>https://peakinsight.netlify.app/posts/best-free-ai-tools-2026.html</link>
+      <description>We tested dozens of AI tools so you don't have to. Here are the 12 best free AI tools in 2026 for writing, images, productivity, and more.</description>
+      <category>Tech</category>
+      <pubDate>Wed, 26 Mar 2026 08:00:00 +0000</pubDate>
+      <guid>https://peakinsight.netlify.app/posts/best-free-ai-tools-2026.html</guid>
+    </item>
+
+    <item>
+      <title>7 Best AI Personal Finance Tools in 2026</title>
+      <link>https://peakinsight.netlify.app/posts/7-best-ai-personal-finance-tools-2026.html</link>
+      <description>AI is transforming personal finance. Here are the 7 best free and freemium tools helping people budget smarter, invest better, and save more in 2026.</description>
+      <category>Finance</category>
+      <pubDate>Mon, 24 Mar 2026 08:00:00 +0000</pubDate>
+      <guid>https://peakinsight.netlify.app/posts/7-best-ai-personal-finance-tools-2026.html</guid>
+    </item>
+
+    <item>
+      <title>How to Start Investing With Just $100 in 2026</title>
+      <link>https://peakinsight.netlify.app/posts/how-to-start-investing-with-100-dollars-2026.html</link>
+      <description>Think you need thousands to start investing? You don't. Here's how to grow your first $100 with low-risk, beginner-friendly strategies.</description>
+      <category>Finance</category>
+      <pubDate>Fri, 21 Mar 2026 08:00:00 +0000</pubDate>
+      <guid>https://peakinsight.netlify.app/posts/how-to-start-investing-with-100-dollars-2026.html</guid>
+    </item>
+
+    <item>
+      <title>The 50/30/20 Budget Rule: Does It Still Work in 2026?</title>
+      <link>https://peakinsight.netlify.app/posts/50-30-20-budget-rule-2026.html</link>
+      <description>The 50/30/20 rule is everywhere - but does it actually work in today's economy? We break down the pros, cons, and modern alternatives.</description>
+      <category>Finance</category>
+      <pubDate>Wed, 19 Mar 2026 08:00:00 +0000</pubDate>
+      <guid>https://peakinsight.netlify.app/posts/50-30-20-budget-rule-2026.html</guid>
+    </item>
+
+    <item>
+      <title>7 Morning Habits That Scientifically Boost Your Focus</title>
+      <link>https://peakinsight.netlify.app/posts/7-morning-habits-for-peak-productivity-2026.html</link>
+      <description>Science-backed morning habits that improve focus, energy, and productivity throughout the day - backed by real research.</description>
+      <category>Health</category>
+      <pubDate>Mon, 17 Mar 2026 08:00:00 +0000</pubDate>
+      <guid>https://peakinsight.netlify.app/posts/7-morning-habits-for-peak-productivity-2026.html</guid>
+    </item>
+
+    <item>
+      <title>How to Travel Full-Time on $1,500 Per Month</title>
+      <link>https://peakinsight.netlify.app/posts/how-to-travel-full-time-on-1500-per-month.html</link>
+      <description>Full-time travel doesn't have to cost a fortune. Here's the exact budget breakdown, destinations, and strategies to travel the world on $1,500 a month.</description>
+      <category>Lifestyle</category>
+      <pubDate>Fri, 14 Mar 2026 08:00:00 +0000</pubDate>
+      <guid>https://peakinsight.netlify.app/posts/how-to-travel-full-time-on-1500-per-month.html</guid>
+    </item>
+
+  </channel>
+</rss>
