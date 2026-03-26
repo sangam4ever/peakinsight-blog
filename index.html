@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ SEO Meta Tags -->
+  <title>PeakInsight — Tech, Finance, Health & Lifestyle</title>
+  <meta name="description" content="PeakInsight covers the latest in technology, personal finance, health & wellness, and lifestyle — helping you live smarter every day." />
+  <meta name="keywords" content="technology tips, personal finance, health wellness, lifestyle blog, make money online, AI tools, investing, productivity" />
+  <meta name="author" content="PeakInsight" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.peakinsight.com/" />
+
+  <!-- ✅ Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PeakInsight — Smarter Living Every Day" />
+  <meta property="og:description" content="Your go-to source for tech, money, health and lifestyle insights that actually matter." />
+  <meta property="og:url" content="https://www.peakinsight.com/" />
+  <meta property="og:image" content="https://www.peakinsight.com/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PeakInsight" />
+  <meta name="twitter:description" content="Tech, Finance, Health & Lifestyle — Smarter Living Every Day." />
+
+  <!-- ✅ Google AdSense — Replace ca-pub-XXXXXXXXXXXXXXXX with your Publisher ID -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+
+  <!-- ✅ Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+
+  <!-- ✅ Schema.org Structured Data for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "PeakInsight",
+    "url": "https://www.peakinsight.com",
+    "description": "Covering technology, personal finance, health & wellness, and lifestyle.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "PeakInsight",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.peakinsight.com/logo.png"
+      }
+    }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --surface: #f8f9fa;
+      --border: #e9ecef;
+      --text: #1a1a2e;
+      --muted: #6c757d;
+      --accent: #2563eb;
+      --accent-light: #eff6ff;
+      --tag-tech: #dbeafe;
+      --tag-finance: #dcfce7;
+      --tag-health: #fef3c7;
+      --tag-life: #fce7f3;
+      --radius: 12px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+      --shadow-hover: 0 4px 12px rgba(0,0,0,0.10), 0 8px 32px rgba(0,0,0,0.07);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      background: var(--accent);
+      color: #fff;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 8px 16px;
+      letter-spacing: 0.01em;
+    }
+    .topbar a { color: #fff; text-decoration: underline; }
+
+    /* ── HEADER ── */
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .logo span { color: var(--text); }
+    nav { display: flex; gap: 4px; align-items: center; }
+    nav a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--muted);
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: background 0.15s, color 0.15s;
+    }
+    nav a:hover { background: var(--accent-light); color: var(--accent); }
+    .header-cta {
+      background: var(--accent);
+      color: #fff !important;
+      border-radius: 8px;
+      padding: 8px 16px !important;
+    }
+    .header-cta:hover { background: #1d4ed8 !important; color: #fff !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: 0.3s; }
+
+    /* ── AD BANNER — LEADERBOARD (728×90) ── */
+    .ad-leaderboard {
+      max-width: 1200px;
+      margin: 16px auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: center;
+    }
+    .ad-slot {
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      overflow: hidden;
+      position: relative;
+    }
+    .ad-slot::before {
+      content: 'Advertisement';
+      position: absolute;
+      top: 4px;
+      right: 8px;
+      font-size: 10px;
+      color: #adb5bd;
+      letter-spacing: 0.08em;
+    }
+    .ad-leaderboard-slot { width: 100%; max-width: 728px; height: 90px; }
+    .ad-sidebar-slot { width: 300px; height: 250px; flex-shrink: 0; }
+    .ad-in-feed { width: 100%; height: 90px; margin: 24px 0; }
+    .ad-sticky-sidebar { width: 160px; height: 600px; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #eff6ff 0%, #f8f9fa 100%);
+      padding: 64px 24px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      letter-spacing: 0.03em;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 5vw, 56px);
+      line-height: 1.15;
+      max-width: 700px;
+      margin: 0 auto 16px;
+    }
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 32px;
+    }
+    .hero-search {
+      display: flex;
+      max-width: 480px;
+      margin: 0 auto;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+    .hero-search input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 12px 16px;
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+    }
+    .hero-search button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.15s;
+    }
+    .hero-search button:hover { background: #1d4ed8; }
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 28px; font-weight: 700; color: var(--accent); }
+    .stat-lbl { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+    /* ── CATEGORY PILLS ── */
+    .categories {
+      max-width: 1200px;
+      margin: 32px auto 0;
+      padding: 0 24px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .cat-pill {
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: 0.15s;
+    }
+    .cat-pill.active, .cat-pill:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+    .cat-pill:not(.active) { background: var(--surface); color: var(--muted); border-color: var(--border); }
+
+    /* ── MAIN LAYOUT ── */
+    .main-layout {
+      max-width: 1200px;
+      margin: 32px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* ── FEATURED POST ── */
+    .featured-post {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      margin-bottom: 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: #fff;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.2s;
+    }
+    .featured-post:hover { box-shadow: var(--shadow-hover); }
+    .featured-img {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb, #7c3aed);
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+    }
+    .featured-body { padding: 32px; display: flex; flex-direction: column; justify-content: center; }
+    .featured-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .featured-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+    .featured-body p { color: var(--muted); font-size: 15px; margin-bottom: 20px; }
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 14px;
+      transition: gap 0.15s;
+    }
+    .read-more:hover { gap: 10px; }
+    .read-more::after { content: '→'; }
+
+    /* ── POST GRID ── */
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .post-card {
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: #fff;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      cursor: pointer;
+    }
+    .post-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+    .card-thumb {
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+    }
+    .bg-tech    { background: linear-gradient(135deg, #dbeafe, #bfdbfe); }
+    .bg-finance { background: linear-gradient(135deg, #dcfce7, #bbf7d0); }
+    .bg-health  { background: linear-gradient(135deg, #fef3c7, #fde68a); }
+    .bg-life    { background: linear-gradient(135deg, #fce7f3, #fbcfe8); }
+    .card-body { padding: 16px 20px 20px; }
+    .card-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+    .tag-tech    { background: var(--tag-tech);    color: #1d4ed8; }
+    .tag-finance { background: var(--tag-finance);  color: #15803d; }
+    .tag-health  { background: var(--tag-health);   color: #b45309; }
+    .tag-life    { background: var(--tag-life);     color: #be185d; }
+    .card-body h3 { font-size: 16px; font-weight: 600; line-height: 1.35; margin-bottom: 8px; }
+    .card-meta { font-size: 12px; color: var(--muted); display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .card-meta .dot { width: 3px; height: 3px; background: var(--border); border-radius: 50%; }
+
+    /* ── SIDEBAR ── */
+    .sidebar { display: flex; flex-direction: column; gap: 24px; }
+    .sidebar-widget {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .widget-header {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .widget-body { padding: 16px 20px; }
+
+    /* Newsletter widget */
+    .newsletter-form { display: flex; flex-direction: column; gap: 10px; }
+    .newsletter-form p { font-size: 13px; color: var(--muted); }
+    .newsletter-form input {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .newsletter-form input:focus { border-color: var(--accent); }
+    .btn-subscribe {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 11px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.15s;
+    }
+    .btn-subscribe:hover { background: #1d4ed8; }
+
+    /* Trending widget */
+    .trending-list { list-style: none; }
+    .trending-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+    }
+    .trending-list li:last-child { border-bottom: none; }
+    .trending-num {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--border);
+      line-height: 1;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+    .trending-title { font-size: 13px; font-weight: 500; line-height: 1.4; }
+    .trending-title small { color: var(--muted); font-weight: 400; display: block; margin-top: 3px; font-size: 11px; }
+
+    /* Tags widget */
+    .tags-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag-link {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 5px 12px;
+      font-size: 12px;
+      color: var(--muted);
+      cursor: pointer;
+      transition: 0.15s;
+    }
+    .tag-link:hover { background: var(--accent-light); color: var(--accent); border-color: var(--accent); }
+
+    /* ── IN-CONTENT AD (Native/In-feed) ── */
+    .in-feed-ad { margin: 24px 0; }
+
+    /* ── SECTION HEADERS ── */
+    .section-hd {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .section-hd h2 { font-size: 20px; font-weight: 700; }
+    .section-hd a { font-size: 13px; color: var(--accent); font-weight: 600; }
+
+    /* ── MORE POSTS ROW ── */
+    .more-posts { margin-top: 32px; }
+    .list-post {
+      display: flex;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: 0.15s;
+    }
+    .list-post:hover .list-title { color: var(--accent); }
+    .list-thumb {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      flex-shrink: 0;
+    }
+    .list-meta { flex: 1; }
+    .list-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .list-title { font-size: 15px; font-weight: 600; line-height: 1.35; margin-bottom: 6px; transition: color 0.15s; }
+    .list-info { font-size: 12px; color: var(--muted); }
+
+    /* ── STICKY AD IN SIDEBAR ── */
+    .sticky-ad { position: sticky; top: 80px; }
+
+    /* ── NEWSLETTER SECTION ── */
+    .newsletter-section {
+      background: linear-gradient(135deg, var(--accent) 0%, #7c3aed 100%);
+      color: #fff;
+      text-align: center;
+      padding: 64px 24px;
+      margin-top: 48px;
+    }
+    .newsletter-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 4vw, 36px);
+      margin-bottom: 12px;
+    }
+    .newsletter-section p { font-size: 16px; opacity: 0.85; margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .nl-form {
+      display: flex;
+      max-width: 420px;
+      margin: 0 auto;
+      gap: 0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    .nl-form input {
+      flex: 1;
+      border: none;
+      padding: 14px 18px;
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+    }
+    .nl-form button {
+      background: #1a1a2e;
+      color: #fff;
+      border: none;
+      padding: 14px 24px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      white-space: nowrap;
+      transition: background 0.15s;
+    }
+    .nl-form button:hover { background: #0f0f1a; }
+    .nl-note { margin-top: 12px; font-size: 12px; opacity: 0.65; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #1a1a2e;
+      color: #9ca3af;
+      padding: 48px 24px 24px;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-brand .logo { color: #60a5fa; margin-bottom: 12px; }
+    .footer-brand p { font-size: 14px; line-height: 1.6; max-width: 280px; }
+    .footer-col h4 { color: #fff; font-size: 14px; font-weight: 600; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 14px; color: #9ca3af; transition: color 0.15s; }
+    .footer-col ul li a:hover { color: #60a5fa; }
+    .footer-bottom {
+      border-top: 1px solid #374151;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 13px;
+    }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { color: #9ca3af; transition: color 0.15s; }
+    .footer-links a:hover { color: #60a5fa; }
+
+    /* ── AD DISCLOSURE ── */
+    .ad-disclosure {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      font-size: 12px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .main-layout { grid-template-columns: 1fr; }
+      .featured-post { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      nav { display: none; }
+      nav.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-bottom: 1px solid var(--border);
+        padding: 12px 24px;
+        gap: 4px;
+        z-index: 99;
+      }
+      .hamburger { display: flex; }
+      .ad-sticky-sidebar { display: none; }
+      .ad-sidebar-slot { width: 100%; height: 100px; }
+    }
+    @media (max-width: 600px) {
+      .posts-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── TOP ANNOUNCEMENT BAR ── -->
+  <div class="topbar">
+    🚀 New: <a href="#">10 AI Tools That Save You 5 Hours a Week</a> — Read Now
+  </div>
+
+  <!-- ── HEADER ── -->
+  <header>
+    <div class="header-inner">
+      <div class="logo">Peak<span>Insight</span></div>
+      <nav id="main-nav">
+        <a href="#">Tech</a>
+        <a href="#">Finance</a>
+        <a href="#">Health</a>
+        <a href="#">Lifestyle</a>
+        <a href="about.html">About</a>
+        <a href="#newsletter" class="header-cta">Subscribe Free</a>
+      </nav>
+      <div class="hamburger" id="hamburger" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── LEADERBOARD AD (Top — highest revenue placement) ── -->
+  <div class="ad-leaderboard">
+    <!-- ✅ REPLACE: Insert your AdSense leaderboard unit here -->
+    <div class="ad-slot ad-leaderboard-slot">
+      <!-- AdSense auto ad or manual unit: 728×90 Leaderboard -->
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:728px;height:90px"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="1234567890"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+
+  <!-- ── HERO SECTION ── -->
+  <section class="hero">
+    <div class="hero-badge">📰 Trending Topics Daily</div>
+    <h1>Smarter Insights for a Better Life</h1>
+    <p>Tech, money, health & lifestyle — the ideas that matter, written clearly, so you can act on them today.</p>
+    <div class="hero-search">
+      <input type="text" placeholder="Search articles…" aria-label="Search articles" />
+      <button>Search</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">50K+</div><div class="stat-lbl">Monthly Readers</div></div>
+      <div class="stat"><div class="stat-num">200+</div><div class="stat-lbl">Expert Articles</div></div>
+      <div class="stat"><div class="stat-num">12K+</div><div class="stat-lbl">Newsletter Subs</div></div>
+    </div>
+  </section>
+
+  <!-- ── CATEGORY PILLS ── -->
+  <div class="categories">
+    <div class="cat-pill active">All</div>
+    <div class="cat-pill">🤖 Technology</div>
+    <div class="cat-pill">💰 Personal Finance</div>
+    <div class="cat-pill">🏃 Health & Wellness</div>
+    <div class="cat-pill">✈️ Lifestyle</div>
+    <div class="cat-pill">🔥 Trending</div>
+  </div>
+
+  <!-- ── MAIN CONTENT + SIDEBAR ── -->
+  <div class="main-layout">
+
+    <!-- ── LEFT: POSTS ── -->
+    <main>
+
+      <!-- Featured Post -->
+      <div class="section-hd">
+        <h2>Featured Story</h2>
+        <a href="#">View all →</a>
+      </div>
+      <article class="featured-post">
+        <div class="featured-img">🤖</div>
+        <div class="featured-body">
+          <div class="featured-label">⚡ Editor's Pick · Technology</div>
+          <h2>How AI Is Reshaping the Way We Work — And How to Get Ahead of It</h2>
+          <p>Artificial intelligence isn't coming for your job — but someone using AI might be. Here's how to leverage the top tools before your competition does.</p>
+          <div class="card-meta" style="margin-bottom:16px;">
+            <span>March 24, 2026</span>
+            <div class="dot"></div>
+            <span>8 min read</span>
+            <div class="dot"></div>
+            <span>👁 14.2K views</span>
+          </div>
+          <a href="#" class="read-more">Read Full Article</a>
+        </div>
+      </article>
+
+      <!-- Latest Posts Grid -->
+      <div class="section-hd">
+        <h2>Latest Articles</h2>
+        <a href="#">See all →</a>
+      </div>
+      <div class="posts-grid">
+
+        <article class="post-card">
+          <div class="card-thumb bg-finance">💸</div>
+          <div class="card-body">
+            <span class="card-tag tag-finance">Personal Finance</span>
+            <h3>The 50/30/20 Budget Rule: Does It Still Work in 2026?</h3>
+            <div class="card-meta">
+              <span>Mar 22</span><div class="dot"></div><span>5 min</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <div class="card-thumb bg-health">🥗</div>
+          <div class="card-body">
+            <span class="card-tag tag-health">Health</span>
+            <h3>7 Evidence-Based Morning Habits That Boost Focus All Day</h3>
+            <div class="card-meta">
+              <span>Mar 21</span><div class="dot"></div><span>6 min</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <div class="card-thumb bg-tech">🚀</div>
+          <div class="card-body">
+            <span class="card-tag tag-tech">Technology</span>
+            <h3>Best Free AI Writing Tools in 2026 (Tested & Ranked)</h3>
+            <div class="card-meta">
+              <span>Mar 20</span><div class="dot"></div><span>7 min</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <div class="card-thumb bg-life">🌍</div>
+          <div class="card-body">
+            <span class="card-tag tag-life">Lifestyle</span>
+            <h3>How to Travel Full-Time on $1,500/Month (Complete Guide)</h3>
+            <div class="card-meta">
+              <span>Mar 19</span><div class="dot"></div><span>10 min</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- ✅ IN-FEED AD (Premium Revenue Placement) -->
+      <div class="in-feed-ad">
+        <div class="ad-slot ad-in-feed">
+          <!-- AdSense In-Article / In-Feed unit -->
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-format="fluid"
+               data-ad-layout-key="-fb+5w+4e-db+86"
+               data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+               data-ad-slot="9876543210"></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+      </div>
+
+      <!-- More Posts List -->
+      <div class="more-posts">
+        <div class="section-hd">
+          <h2>More to Read</h2>
+          <a href="#">Browse all →</a>
+        </div>
+
+        <div class="list-post">
+          <div class="list-thumb bg-finance">📊</div>
+          <div class="list-meta">
+            <div class="list-tag" style="color:#15803d;">Finance</div>
+            <div class="list-title">Index Funds vs ETFs: Which Should You Invest In for Maximum Returns?</div>
+            <div class="list-info">Mar 18 · 9 min read · 8.3K views</div>
+          </div>
+        </div>
+
+        <div class="list-post">
+          <div class="list-thumb bg-tech">💡</div>
+          <div class="list-meta">
+            <div class="list-tag" style="color:#1d4ed8;">Technology</div>
+            <div class="list-title">10 Chrome Extensions That Make You 3× More Productive in 2026</div>
+            <div class="list-info">Mar 17 · 5 min read · 11.1K views</div>
+          </div>
+        </div>
+
+        <div class="list-post">
+          <div class="list-thumb bg-health">🧘</div>
+          <div class="list-meta">
+            <div class="list-tag" style="color:#b45309;">Health</div>
+            <div class="list-title">The Science of Sleep: Why 7 Hours Isn't Enough for Most Adults</div>
+            <div class="list-info">Mar 16 · 8 min read · 6.9K views</div>
+          </div>
+        </div>
+
+        <div class="list-post">
+          <div class="list-thumb bg-life">🏡</div>
+          <div class="list-meta">
+            <div class="list-tag" style="color:#be185d;">Lifestyle</div>
+            <div class="list-title">Minimalism in 2026: Why Owning Less Is the New Wealth</div>
+            <div class="list-info">Mar 15 · 6 min read · 5.4K views</div>
+          </div>
+        </div>
+
+        <div class="list-post">
+          <div class="list-thumb bg-finance">💎</div>
+          <div class="list-meta">
+            <div class="list-tag" style="color:#15803d;">Finance</div>
+            <div class="list-title">How to Start Investing With Just $100 — A Beginner's Roadmap</div>
+            <div class="list-info">Mar 14 · 7 min read · 19.2K views</div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- ── RIGHT: SIDEBAR ── -->
+    <aside class="sidebar">
+
+      <!-- ✅ SIDEBAR AD — Medium Rectangle 300×250 (Top Revenue) -->
+      <div class="sidebar-widget" style="padding:16px;">
+        <div class="ad-slot ad-sidebar-slot">
+          <!-- AdSense 300×250 Medium Rectangle -->
+          <ins class="adsbygoogle"
+               style="display:inline-block;width:300px;height:250px"
+               data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+               data-ad-slot="1122334455"></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="sidebar-widget">
+        <div class="widget-header">📬 Free Newsletter</div>
+        <div class="widget-body">
+          <form class="newsletter-form" onsubmit="handleSubscribe(event)">
+            <p>Get the week's best articles delivered to your inbox. No spam, ever.</p>
+            <input type="text" placeholder="Your name" />
+            <input type="email" placeholder="your@email.com" required />
+            <button type="submit" class="btn-subscribe">Subscribe Free →</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Trending -->
+      <div class="sidebar-widget">
+        <div class="widget-header">🔥 Trending Now</div>
+        <div class="widget-body" style="padding-top:0;padding-bottom:0;">
+          <ul class="trending-list">
+            <li>
+              <span class="trending-num">01</span>
+              <div class="trending-title">Best AI Tools of 2026<small>Tech · 14.2K reads</small></div>
+            </li>
+            <li>
+              <span class="trending-num">02</span>
+              <div class="trending-title">Invest $100 and Grow It Fast<small>Finance · 19.2K reads</small></div>
+            </li>
+            <li>
+              <span class="trending-num">03</span>
+              <div class="trending-title">Morning Habits for Peak Focus<small>Health · 10.8K reads</small></div>
+            </li>
+            <li>
+              <span class="trending-num">04</span>
+              <div class="trending-title">Travel the World on $1,500/mo<small>Lifestyle · 8.6K reads</small></div>
+            </li>
+            <li>
+              <span class="trending-num">05</span>
+              <div class="trending-title">Chrome Extensions for Work<small>Tech · 11.1K reads</small></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ✅ SECOND SIDEBAR AD — 300×250 -->
+      <div class="sidebar-widget" style="padding:16px;">
+        <div class="ad-slot ad-sidebar-slot">
+          <ins class="adsbygoogle"
+               style="display:inline-block;width:300px;height:250px"
+               data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+               data-ad-slot="5566778899"></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+      </div>
+
+      <!-- Tags Cloud -->
+      <div class="sidebar-widget">
+        <div class="widget-header">🏷️ Topics</div>
+        <div class="widget-body">
+          <div class="tags-cloud">
+            <span class="tag-link">AI Tools</span>
+            <span class="tag-link">Investing</span>
+            <span class="tag-link">Productivity</span>
+            <span class="tag-link">Budgeting</span>
+            <span class="tag-link">Nutrition</span>
+            <span class="tag-link">Travel</span>
+            <span class="tag-link">Side Hustles</span>
+            <span class="tag-link">Sleep</span>
+            <span class="tag-link">Crypto</span>
+            <span class="tag-link">Fitness</span>
+            <span class="tag-link">Remote Work</span>
+            <span class="tag-link">Mindfulness</span>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- ── AD DISCLOSURE ── -->
+  <div class="ad-disclosure">
+    This site may display advertisements. We only work with reputable ad networks. Some links may be affiliate links. <a href="#" style="color:var(--accent)">Disclosure Policy</a>
+  </div>
+
+  <!-- ── NEWSLETTER SECTION ── -->
+  <section class="newsletter-section" id="newsletter">
+    <h2>Join 12,000+ Readers Who Think Smarter</h2>
+    <p>One weekly email. The best articles on tech, money, health & life — curated for you.</p>
+    <form class="nl-form" onsubmit="handleSubscribe(event)">
+      <input type="email" placeholder="Enter your email address…" required />
+      <button type="submit">Get Free Access →</button>
+    </form>
+    <p class="nl-note">No spam. Unsubscribe at any time. 🔒 Your privacy is protected.</p>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">Peak<span style="color:#9ca3af;">Insight</span></div>
+          <p>Your trusted source for technology, personal finance, health & wellness, and lifestyle content that helps you live smarter every day.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Topics</h4>
+          <ul>
+            <li><a href="#">Technology</a></li>
+            <li><a href="#">Personal Finance</a></li>
+            <li><a href="#">Health & Wellness</a></li>
+            <li><a href="#">Lifestyle</a></li>
+            <li><a href="#">Trending</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#">Write for Us</a></li>
+            <li><a href="#">Advertise</a></li>
+            <li><a href="#">Newsletter</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Disclosure</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 PeakInsight. All rights reserved.</span>
+        <div class="footer-links">
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Mobile Nav Toggle
+    function toggleNav() {
+      const nav = document.getElementById('main-nav');
+      nav.classList.toggle('open');
+    }
+
+    // ── Category filter pills (visual only)
+    document.querySelectorAll('.cat-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+      });
+    });
+
+    // ── Newsletter subscribe handler
+    function handleSubscribe(e) {
+      e.preventDefault();
+      const form = e.target;
+      const btn = form.querySelector('button[type="submit"]');
+      const emailInput = form.querySelector('input[type="email"]');
+      if (!emailInput.value) return;
+      btn.textContent = '✅ Subscribed!';
+      btn.style.background = '#16a34a';
+      emailInput.value = '';
+      setTimeout(() => {
+        btn.textContent = btn.classList.contains('btn-subscribe') ? 'Subscribe Free →' : 'Get Free Access →';
+        btn.style.background = '';
+      }, 3000);
+    }
+
+    // ── Smooth scroll for anchor links
+    document.querySelectorAll('a[href="#newsletter"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        document.getElementById('newsletter').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+
+</body>
+</html>
