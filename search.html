@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search — PeakInsight</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--accent:#2563eb;--text:#1a1a2e;--muted:#6c757d;--border:#e9ecef;--surface:#f8f9fa;--radius:12px}
+    body{font-family:'Inter',sans-serif;background:#fff;color:var(--text);font-size:16px;line-height:1.6}
+    a{color:var(--accent);text-decoration:none}
+    .site-header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+    .site-header-inner{max-width:1100px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-family:'Playfair Display',serif;font-size:22px;color:var(--accent);font-weight:700}
+    .logo span{color:var(--text)}
+    nav a{font-size:14px;color:var(--muted);margin-left:20px;font-weight:500}
+    nav a:hover{color:var(--accent)}
+    .search-hero{background:linear-gradient(135deg,#eff6ff,#f8f9fa);padding:48px 24px;border-bottom:1px solid var(--border);text-align:center}
+    .search-hero h1{font-family:'Playfair Display',serif;font-size:32px;margin-bottom:20px}
+    .search-bar{display:flex;max-width:560px;margin:0 auto;border:2px solid var(--accent);border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 4px 16px rgba(37,99,235,0.15)}
+    .search-bar input{flex:1;border:none;outline:none;padding:14px 18px;font-size:16px;font-family:'Inter',sans-serif}
+    .search-bar button{background:var(--accent);color:#fff;border:none;padding:14px 28px;font-size:15px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif}
+    .results-wrap{max-width:860px;margin:40px auto;padding:0 24px 64px}
+    .results-count{font-size:14px;color:var(--muted);margin-bottom:24px}
+    .result-card{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border);cursor:pointer;transition:.15s}
+    .result-card:hover .result-title{color:var(--accent)}
+    .result-emoji{width:64px;height:64px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;background:var(--surface)}
+    .result-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+    .result-title{font-size:17px;font-weight:600;line-height:1.35;margin-bottom:6px}
+    .result-excerpt{font-size:14px;color:var(--muted);line-height:1.5}
+    .no-results{text-align:center;padding:64px 24px;color:var(--muted)}
+    .no-results h2{font-size:24px;margin-bottom:12px;color:var(--text)}
+    .ad-unit{background:var(--surface);border:1px dashed var(--border);border-radius:var(--radius);height:90px;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--muted);margin:32px 0;text-transform:uppercase;letter-spacing:.05em;position:relative}
+    .ad-unit::before{content:'Advertisement';position:absolute;top:5px;right:10px;font-size:10px;color:#adb5bd}
+    footer{background:#1a1a2e;color:#9ca3af;padding:32px 24px;text-align:center;font-size:14px}
+    footer a{color:#60a5fa;margin:0 10px}
+    @media(max-width:600px){nav{display:none}}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="logo">Peak<span>Insight</span></a>
+    <nav><a href="tech.html">Tech</a><a href="finance.html">Finance</a><a href="health.html">Health</a><a href="lifestyle.html">Lifestyle</a><a href="about.html">About</a></nav>
+  </div>
+</header>
+<div class="search-hero">
+  <h1>Search PeakInsight</h1>
+  <div class="search-bar">
+    <input type="text" id="search-input" placeholder="Search articles, topics…" />
+    <button onclick="doSearch()">Search</button>
+  </div>
+</div>
+<div class="results-wrap">
+  <div class="ad-unit">
+    <ins class="adsbygoogle" style="display:block;width:100%;height:90px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="9900112233" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+  <div id="results-count" class="results-count"></div>
+  <div id="results-list"></div>
+</div>
+<footer><div>© 2026 PeakInsight.</div><div style="margin-top:10px"><a href="index.html">Home</a><a href="about.html">About</a><a href="privacy-policy.html">Privacy</a></div></footer>
+<script>
+  const POSTS = [
+    {title:"How to Start Investing With Just $100 in 2026",category:"Personal Finance",excerpt:"Think you need thousands to start investing? You don't. Here's exactly how to grow your first $100 into real wealth.",url:"posts/how-to-start-investing-with-100-dollars-2026.html",emoji:"💸",time:"9 min"},
+    {title:"12 Best Free AI Tools in 2026 — Tested & Ranked",category:"Technology",excerpt:"We tested dozens of AI tools so you don't have to. Here are the 12 best free ones for writing, images, productivity, and more.",url:"posts/best-free-ai-tools-2026.html",emoji:"🤖",time:"10 min"},
+    {title:"7 Morning Habits That Scientifically Boost Your Focus",category:"Health & Wellness",excerpt:"Science-backed morning habits that improve focus, energy, and productivity. No fluff — just what the research says works.",url:"posts/7-morning-habits-for-peak-productivity-2026.html",emoji:"🌅",time:"8 min"},
+    {title:"The 50/30/20 Budget Rule: Does It Still Work in 2026?",category:"Personal Finance",excerpt:"The 50/30/20 rule is everywhere — but does it actually work in today's economy? An honest breakdown.",url:"posts/50-30-20-budget-rule-2026.html",emoji:"📊",time:"7 min"},
+    {title:"How to Travel Full-Time on $1,500/Month in 2026",category:"Lifestyle",excerpt:"Full-time travel doesn't have to cost a fortune. A complete, honest guide with real numbers and real destinations.",url:"posts/how-to-travel-full-time-on-1500-per-month.html",emoji:"✈️",time:"11 min"}
+  ];
+  const catColors={"Technology":"#1d4ed8","Personal Finance":"#15803d","Health & Wellness":"#b45309","Lifestyle":"#be185d"};
+  const catBg={"Technology":"#dbeafe","Personal Finance":"#dcfce7","Health & Wellness":"#fef3c7","Lifestyle":"#fce7f3"};
+
+  function renderResults(posts, query) {
+    const list = document.getElementById('results-list');
+    const count = document.getElementById('results-count');
+    if (posts.length === 0) {
+      count.textContent = '';
+      list.innerHTML = '<div class="no-results"><h2>No results found</h2><p>Try different keywords or <a href="index.html">browse all articles</a>.</p></div>';
+      return;
+    }
+    count.textContent = posts.length + ' result' + (posts.length !== 1 ? 's' : '') + (query ? ' for "' + query + '"' : '');
+    list.innerHTML = posts.map(p => `<a href="${p.url}" style="text-decoration:none;color:inherit;"><div class="result-card"><div class="result-emoji" style="background:${catBg[p.category]||'#f8f9fa'}">${p.emoji}</div><div><div class="result-tag" style="color:${catColors[p.category]||'#6c757d'}">${p.category}</div><div class="result-title">${p.title}</div><div class="result-excerpt">${p.excerpt}</div></div></div></a>`).join('');
+  }
+
+  function doSearch() {
+    const q = document.getElementById('search-input').value.trim().toLowerCase();
+    const filtered = q ? POSTS.filter(p => p.title.toLowerCase().includes(q) || p.category.toLowerCase().includes(q) || p.excerpt.toLowerCase().includes(q)) : POSTS;
+    window.history.replaceState(null,'','?q='+encodeURIComponent(q));
+    renderResults(filtered, document.getElementById('search-input').value.trim());
+  }
+
+  document.getElementById('search-input').addEventListener('keydown', e => { if(e.key==='Enter') doSearch(); });
+
+  // Load from URL param on page load
+  const params = new URLSearchParams(window.location.search);
+  const q = params.get('q') || '';
+  if (q) { document.getElementById('search-input').value = q; }
+  const filtered = q ? POSTS.filter(p => p.title.toLowerCase().includes(q.toLowerCase()) || p.category.toLowerCase().includes(q.toLowerCase()) || p.excerpt.toLowerCase().includes(q.toLowerCase())) : POSTS;
+  renderResults(filtered, q);
+</script>
+</body>
+</html>

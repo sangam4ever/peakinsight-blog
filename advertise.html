@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advertise with Us - PeakInsight</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            text-decoration: none;
+            color: #1a1a2e;
+        }
+
+        .logo-peak {
+            color: #2563eb;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #1a1a2e;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #1a1a2e;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            margin: 1rem 0 1rem 2rem;
+            color: #555;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+        }
+
+        .ad-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .ad-card {
+            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .ad-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        .ad-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+        }
+
+        .ad-spec {
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 0.5rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .ad-card p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f0f9ff;
+            border-radius: 8px;
+            border-left: 4px solid #2563eb;
+        }
+
+        .stat-card .number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #2563eb;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card p {
+            color: #0c4a6e;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .form-wrapper {
+            max-width: 600px;
+            margin: 2rem auto;
+            background: #f9fafb;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .success-message {
+            display: none;
+            background: #d1fae5;
+            border: 1px solid #6ee7b7;
+            color: #065f46;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .adsense {
+            text-align: center;
+            padding: 2rem;
+            background: #f9fafb;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        footer {
+            background: #1a1a2e;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .ad-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><span class="logo-peak">Peak</span>Insight</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="write-for-us.html">Write for Us</a></li>
+                <li><a href="advertise.html">Advertise</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Reach 50,000+ Monthly Readers</h1>
+        <p>Grow your brand by advertising on PeakInsight. Connect with our engaged audience of professionals and decision-makers.</p>
+    </div>
+
+    <main>
+        <div class="adsense">
+            <!-- Google AdSense Placeholder -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        </div>
+
+        <section>
+            <h2>Why Advertise with PeakInsight?</h2>
+            <p>PeakInsight reaches a dedicated audience of professionals, entrepreneurs, and decision-makers who are interested in technology, finance, business, health, and lifestyle topics. Our readers are engaged, informed, and looking for quality products and services.</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="number">50K+</div>
+                    <p>Monthly Readers</p>
+                </div>
+                <div class="stat-card">
+                    <div class="number">75%</div>
+                    <p>Return Visitors</p>
+                </div>
+                <div class="stat-card">
+                    <div class="number">3.5+</div>
+                    <p>Average Pages/Visit</p>
+                </div>
+                <div class="stat-card">
+                    <div class="number">4.2%</div>
+                    <p>Average CTR</p>
+                </div>
+            </div>
+
+            <h3>Our Audience</h3>
+            <ul>
+                <li><strong>Age Range:</strong> Primarily 25-55 years old</li>
+                <li><strong>Tech-Savvy:</strong> Early adopters and technology enthusiasts</li>
+                <li><strong>Professional:</strong> 80% have college degrees; many in management roles</li>
+                <li><strong>Geographic:</strong> Global audience with strong North American presence</li>
+                <li><strong>Interests:</strong> Professional development, investing, wellness, and innovation</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Advertising Options</h2>
+            <p>We offer flexible advertising solutions to meet your marketing goals and budget. Choose the placement that works best for your brand.</p>
+
+            <div class="ad-grid">
+                <div class="ad-card">
+                    <h4>Leaderboard</h4>
+                    <span class="ad-spec">728x90 pixels</span>
+                    <p>Prominent placement at the top of each page. Ideal for brand awareness and maximum visibility. Positioned above the fold for optimal engagement.</p>
+                    <p><strong>Best for:</strong> Brand awareness, app launches, campaign promotions</p>
+                </div>
+
+                <div class="ad-card">
+                    <h4>Sidebar Rectangle</h4>
+                    <span class="ad-spec">300x250 pixels</span>
+                    <p>High-performance placement in the sidebar. Our best-performing ad unit with strong click-through rates. Visible throughout the article reading experience.</p>
+                    <p><strong>Best for:</strong> Direct response, lead generation, product promotion</p>
+                </div>
+
+                <div class="ad-card">
+                    <h4>In-Article Native Ads</h4>
+                    <span class="ad-spec">Custom</span>
+                    <p>Seamlessly integrated content ads within articles. Blends naturally with editorial content for a non-intrusive experience. Higher engagement rates.</p>
+                    <p><strong>Best for:</strong> Content-driven campaigns, sponsored products, thought leadership</p>
+                </div>
+
+                <div class="ad-card">
+                    <h4>Newsletter Sponsorship</h4>
+                    <span class="ad-spec">Email Campaign</span>
+                    <p>Reach subscribers directly in our weekly newsletter. Guaranteed placement and high engagement rates. Premium positioning available.</p>
+                    <p><strong>Best for:</strong> SaaS products, services, exclusive offers</p>
+                </div>
+
+                <div class="ad-card">
+                    <h4>Sponsored Content</h4>
+                    <span class="ad-spec">1500+ words</span>
+                    <p>Custom-written articles featuring your product or service. Fully disclosed as sponsored. Optimized for search engines and reader engagement.</p>
+                    <p><strong>Best for:</strong> Brand storytelling, detailed product education, thought leadership</p>
+                </div>
+
+                <div class="ad-card">
+                    <h4>Custom Solutions</h4>
+                    <span class="ad-spec">Flexible</span>
+                    <p>Work with our team to develop custom advertising solutions tailored to your specific goals and budget. Premium placements available upon request.</p>
+                    <p><strong>Best for:</strong> Large campaigns, premium brands, long-term partnerships</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Pricing & Packages</h2>
+            <p>Our advertising rates are competitive and flexible. We offer various package options to fit different budgets and campaign goals. Contact us for detailed pricing information and custom quotes.</p>
+            <ul>
+                <li><strong>Leaderboard Ads:</strong> $500-1,500/month depending on campaign length</li>
+                <li><strong>Sidebar Ads:</strong> $400-1,200/month (best value)</li>
+                <li><strong>In-Article Native:</strong> $1,000-2,500/month</li>
+                <li><strong>Newsletter Sponsorship:</strong> $1,500-3,000/month</li>
+                <li><strong>Sponsored Content:</strong> $2,000-5,000 per article</li>
+                <li><strong>Custom Solutions:</strong> Quote upon request</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Get Started Today</h2>
+            <p>Ready to reach our engaged audience? Fill out the form below and our advertising team will contact you with more information, pricing details, and available placements.</p>
+
+            <div class="form-wrapper">
+                <div class="success-message" id="successMessage">
+                    <strong>Success!</strong> Thank you for your advertising inquiry. Our team will be in touch with you shortly.
+                </div>
+
+                <form id="advertiseForm">
+                    <div class="form-group">
+                        <label for="company">Company Name *</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-name">Contact Name *</label>
+                        <input type="text" id="contact-name" name="contact_name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-email">Email Address *</label>
+                        <input type="email" id="contact-email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget">Budget Range *</label>
+                        <select id="budget" name="budget" required>
+                            <option value="">Select a budget range</option>
+                            <option value="under-500">Under $500/month</option>
+                            <option value="500-1000">$500 - $1,000/month</option>
+                            <option value="1000-2500">$1,000 - $2,500/month</option>
+                            <option value="2500-5000">$2,500 - $5,000/month</option>
+                            <option value="5000-plus">$5,000+/month</option>
+                            <option value="custom">Custom/Negotiable</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Tell us about your campaign *</label>
+                        <textarea id="message" name="message" placeholder="What product or service are you advertising? What are your goals? Which ad formats interest you?" required></textarea>
+                    </div>
+
+                    <button type="submit">Submit Inquiry</button>
+                </form>
+
+                <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #999; text-align: center;">
+                    Have questions? <a href="contact.html" style="color: #2563eb; text-decoration: none;">Contact us</a> directly for more information.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Our Advertising Standards</h2>
+            <p>PeakInsight is committed to maintaining editorial integrity and providing a quality experience for our readers. All advertisements must comply with our standards:</p>
+            <ul>
+                <li>No misleading or false claims</li>
+                <li>No malware, spyware, or other harmful content</li>
+                <li>No discriminatory or hateful content</li>
+                <li>Compliance with all relevant laws and regulations</li>
+                <li>Clear disclosure of sponsored or advertisement content</li>
+                <li>High-quality creative that aligns with our brand standards</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 PeakInsight. All rights reserved.</p>
+        <p><a href="terms.html" style="color: #fff; text-decoration: none;">Terms of Service</a> | <a href="cookie-policy.html" style="color: #fff; text-decoration: none;">Cookie Policy</a> | <a href="disclosure.html" style="color: #fff; text-decoration: none;">Disclosure</a></p>
+    </footer>
+
+    <script>
+        document.getElementById('advertiseForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('successMessage').classList.add('show');
+            this.reset();
+            setTimeout(() => {
+                document.getElementById('successMessage').classList.remove('show');
+            }, 5000);
+        });
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+        crossorigin="anonymous"></script>
+</body>
+</html>

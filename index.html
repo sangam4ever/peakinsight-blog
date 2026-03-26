@@ -644,10 +644,10 @@
     <div class="header-inner">
       <div class="logo">Peak<span>Insight</span></div>
       <nav id="main-nav">
-        <a href="#">Tech</a>
-        <a href="#">Finance</a>
-        <a href="#">Health</a>
-        <a href="#">Lifestyle</a>
+        <a href="tech.html">Tech</a>
+        <a href="finance.html">Finance</a>
+        <a href="health.html">Health</a>
+        <a href="lifestyle.html">Lifestyle</a>
         <a href="about.html">About</a>
         <a href="#newsletter" class="header-cta">Subscribe Free</a>
       </nav>
@@ -675,9 +675,10 @@
     <div class="hero-badge">📰 Trending Topics Daily</div>
     <h1>Smarter Insights for a Better Life</h1>
     <p>Tech, money, health & lifestyle — the ideas that matter, written clearly, so you can act on them today.</p>
-    <div class="hero-search">
-      <input type="text" placeholder="Search articles…" aria-label="Search articles" />
-      <button>Search</button>
+    <div class="hero-search" style="position:relative;">
+      <input type="text" id="search-input" placeholder="Search articles…" aria-label="Search articles" autocomplete="off" />
+      <button onclick="doSearch()">Search</button>
+      <div id="search-suggestions" style="display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:1px solid #e9ecef;border-top:none;border-radius:0 0 10px 10px;box-shadow:0 8px 24px rgba(0,0,0,0.12);z-index:999;max-height:320px;overflow-y:auto;text-align:left;"></div>
     </div>
     <div class="hero-stats">
       <div class="stat"><div class="stat-num">50K+</div><div class="stat-lbl">Monthly Readers</div></div>
@@ -688,12 +689,12 @@
 
   <!-- ── CATEGORY PILLS ── -->
   <div class="categories">
-    <div class="cat-pill active">All</div>
-    <div class="cat-pill">🤖 Technology</div>
-    <div class="cat-pill">💰 Personal Finance</div>
-    <div class="cat-pill">🏃 Health & Wellness</div>
-    <div class="cat-pill">✈️ Lifestyle</div>
-    <div class="cat-pill">🔥 Trending</div>
+    <a href="index.html" style="text-decoration:none;"><div class="cat-pill active">All</div></a>
+    <a href="tech.html" style="text-decoration:none;"><div class="cat-pill">🤖 Technology</div></a>
+    <a href="finance.html" style="text-decoration:none;"><div class="cat-pill">💰 Personal Finance</div></a>
+    <a href="health.html" style="text-decoration:none;"><div class="cat-pill">🏃 Health & Wellness</div></a>
+    <a href="lifestyle.html" style="text-decoration:none;"><div class="cat-pill">✈️ Lifestyle</div></a>
+    <a href="search.html" style="text-decoration:none;"><div class="cat-pill">🔥 Trending</div></a>
   </div>
 
   <!-- ── MAIN CONTENT + SIDEBAR ── -->
@@ -986,20 +987,20 @@
           <h4>Company</h4>
           <ul>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="#">Write for Us</a></li>
-            <li><a href="#">Advertise</a></li>
-            <li><a href="#">Newsletter</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="write-for-us.html">Write for Us</a></li>
+            <li><a href="advertise.html">Advertise</a></li>
+            <li><a href="#newsletter">Newsletter</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Legal</h4>
           <ul>
             <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Cookie Policy</a></li>
-            <li><a href="#">Disclosure</a></li>
-            <li><a href="#">Sitemap</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="cookie-policy.html">Cookie Policy</a></li>
+            <li><a href="disclosure.html">Disclosure</a></li>
+            <li><a href="sitemap.html">Sitemap</a></li>
           </ul>
         </div>
       </div>
@@ -1015,19 +1016,62 @@
   </footer>
 
   <script>
+    // ── All posts data for search
+    const ALL_POSTS = [
+      { title: "How to Start Investing With Just $100 in 2026", category: "Personal Finance", excerpt: "Think you need thousands to start investing? You don't. Here's how to grow your first $100.", url: "posts/how-to-start-investing-with-100-dollars-2026.html", emoji: "💸", time: "9 min" },
+      { title: "12 Best Free AI Tools in 2026 — Tested & Ranked", category: "Technology", excerpt: "We tested dozens of AI tools. Here are the 12 best free ones for writing, images & productivity.", url: "posts/best-free-ai-tools-2026.html", emoji: "🤖", time: "10 min" },
+      { title: "7 Morning Habits That Scientifically Boost Your Focus", category: "Health & Wellness", excerpt: "Science-backed morning habits that improve focus, energy, and productivity. No fluff.", url: "posts/7-morning-habits-for-peak-productivity-2026.html", emoji: "🌅", time: "8 min" },
+      { title: "The 50/30/20 Budget Rule: Does It Still Work in 2026?", category: "Personal Finance", excerpt: "The 50/30/20 rule is everywhere — but does it actually work in today's economy?", url: "posts/50-30-20-budget-rule-2026.html", emoji: "📊", time: "7 min" },
+      { title: "How to Travel Full-Time on $1,500/Month in 2026", category: "Lifestyle", excerpt: "Full-time travel doesn't have to cost a fortune. Real numbers, real destinations.", url: "posts/how-to-travel-full-time-on-1500-per-month.html", emoji: "✈️", time: "11 min" }
+    ];
+
+    const catColors = { "Technology": "#1d4ed8", "Personal Finance": "#15803d", "Health & Wellness": "#b45309", "Lifestyle": "#be185d" };
+
+    // ── Live search suggestions
+    const searchInput = document.getElementById('search-input');
+    const suggestionsBox = document.getElementById('search-suggestions');
+
+    searchInput.addEventListener('input', function() {
+      const q = this.value.trim().toLowerCase();
+      suggestionsBox.innerHTML = '';
+      if (q.length < 2) { suggestionsBox.style.display = 'none'; return; }
+      const matches = ALL_POSTS.filter(p => p.title.toLowerCase().includes(q) || p.category.toLowerCase().includes(q) || p.excerpt.toLowerCase().includes(q));
+      if (matches.length === 0) {
+        suggestionsBox.innerHTML = '<div style="padding:14px 18px;color:#6c757d;font-size:14px;">No results found for "' + this.value + '"</div>';
+        suggestionsBox.style.display = 'block';
+        return;
+      }
+      matches.forEach(post => {
+        const item = document.createElement('a');
+        item.href = post.url;
+        item.style.cssText = 'display:flex;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid #f1f3f5;text-decoration:none;color:#1a1a2e;transition:background 0.15s;';
+        item.onmouseover = () => item.style.background = '#f8f9fa';
+        item.onmouseout = () => item.style.background = '';
+        item.innerHTML = `<span style="font-size:24px;flex-shrink:0">${post.emoji}</span><div style="flex:1;min-width:0"><div style="font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${post.title}</div><div style="font-size:12px;margin-top:3px;"><span style="color:${catColors[post.category]||'#6c757d'};font-weight:600">${post.category}</span><span style="color:#adb5bd;margin:0 6px">·</span><span style="color:#6c757d">${post.time} read</span></div></div>`;
+        suggestionsBox.appendChild(item);
+      });
+      suggestionsBox.style.display = 'block';
+    });
+
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') doSearch();
+      if (e.key === 'Escape') suggestionsBox.style.display = 'none';
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.hero-search')) suggestionsBox.style.display = 'none';
+    });
+
+    function doSearch() {
+      const q = searchInput.value.trim();
+      if (q) window.location.href = 'search.html?q=' + encodeURIComponent(q);
+    }
+
     // ── Mobile Nav Toggle
     function toggleNav() {
       const nav = document.getElementById('main-nav');
       nav.classList.toggle('open');
     }
-
-    // ── Category filter pills (visual only)
-    document.querySelectorAll('.cat-pill').forEach(pill => {
-      pill.addEventListener('click', () => {
-        document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
-        pill.classList.add('active');
-      });
-    });
 
     // ── Newsletter subscribe handler
     function handleSubscribe(e) {
@@ -1045,7 +1089,7 @@
       }, 3000);
     }
 
-    // ── Smooth scroll for anchor links
+    // ── Smooth scroll
     document.querySelectorAll('a[href="#newsletter"]').forEach(a => {
       a.addEventListener('click', e => {
         e.preventDefault();
