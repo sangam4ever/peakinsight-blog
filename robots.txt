@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://peakinsight.netlify.app/sitemap.xml
